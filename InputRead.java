@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -33,6 +34,7 @@ public class InputRead {
                     print("lido:" + file);
                 } catch (Exception e) {
                     print("Arquivo não lido:" + file);
+                    print(e.getLocalizedMessage());
 
                     // TODO: handle exception
                 }
@@ -52,8 +54,9 @@ public class InputRead {
     }
 
     public static Artigo readFiles(String fileName) throws IOException {
+        Charset charset = Charset.forName("Cp1252");
         Path path = Paths.get(fileName);
-        List<String> allLines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        List<String> allLines = Files.readAllLines(path, charset);
         for (String line : allLines) {
             System.out.println(line);
         }
