@@ -21,7 +21,6 @@ class Artigo {
     String tags;
     String[] frases;
     List<Frase> frasesFiltradas;
-    List<String> vertices;
 
     public Artigo(String titulo, String resumo, String tags) {
         this.titulo = titulo;
