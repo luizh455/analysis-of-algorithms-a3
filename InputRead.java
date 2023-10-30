@@ -76,7 +76,7 @@ public class InputRead {
         }
 
         for (Artigo artigo : artigosNormalizados) {
-            filtrarStopWords(artigo);
+            artigo.frasesFiltradas = filtrarStopWords(artigo).frasesFiltradas;
         }        
     }
 
